@@ -1,0 +1,123 @@
+﻿<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="https://static.nxin.com/mobile/jssdk/znt.min.js"></script>
+<div style="margin-top:50px;">
+    年龄 <input id="age" type="text" value=""  name=""/>
+    姓名 <input id="name" type="text" value="" name="" />
+    <input  value="提交" type="button" id="sumit"/>
+</div>
+
+<div> <a href="home/Map">点击跳到地图</a></div>
+<div style="margin-top:150px;" id="aged">
+   
+
+    <figure>
+        <h3>图片验证码</h3>
+        <fieldset>
+            <legend>数字验证码</legend>
+            <img id="nubImg" title="数字验证码" src="/Home/NumberVerifyCode?random=" alt="vcode" onclick="refresh()" style="cursor:pointer;" />
+        </fieldset>
+        <fieldset>
+            <legend>数字验证码</legend>
+            <img id="abcImg" title="字母验证码" src="/Home/AbcVerifyCode" alt="vcode" onclick="this.src=this.src+'?'" style="cursor:pointer;" />
+        </fieldset>
+        <fieldset>
+            <legend>混合验证码</legend>
+            <img id="mixImg" title="数字字母混合验证码" src="/Home/MixVerifyCode" alt="vcode" onclick="this.src=this.src+'?'" style="cursor:pointer;" />
+        </fieldset>
+    </figure>
+
+</div>
+<div style=" margin-bottom:5px;">
+    <a id="btnRun" class="btn btn-default" href="#" role="button">执行</a>
+    <a id="btnPause" class="btn btn-default" href="#" role="button">暂停</a>
+    <a id="btnResume" class="btn btn-default" href="#" role="button">恢复</a>
+
+    <a id="btnEdit" class="btn btn-default" href="#" role="button" style=" margin-left:10px">修改</a>
+    <a id="btnDel" class="btn btn-default" href="#" role="button">删除</a>
+</div>
+<script>
+
+    var a = 0.1;
+    var b = 0.2;
+    var c = a + b;
+    console.log(c);
+    $("#sumit").click(function () {
+        $.post("/Home/Save", { Age: $("#age").val(), Name: $("#name").val() }, function (data) {
+            $("#aged").html(data);
+        });
+    });
+
+    function refresh() {
+        var id = document.getElementById("nubImg");
+        var str = "/VerifyCode/NumberVerifyCode?random=" + Math.random();
+        id.setAttribute("src", str);
+    }
+
+    $("#btnRun").click(function () {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Start/",
+            data: null,// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                $("#commonLayout_appcreshi").parent().html(data);
+            }
+        });
+    });
+    $("#btnPause").click(function () {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Pause/",
+            data: null,// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                $("#commonLayout_appcreshi").parent().html(data);
+            }
+        });
+    });
+
+    $("#btnResume").click(function () {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Rest/",
+            data: null,// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                $("#commonLayout_appcreshi").parent().html(data);
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        znt.openH5Win({
+            requestUrl: "http://www.baidu.com"
+        });
+        //获取地理位置，只能在智农通的环境中打开
+        znt.getLocation({
+            success: function (res) {
+                var latitude = res.lat;
+                var longitude = res.lng;
+                var address = res.address;
+                alert(address);
+            },
+            fail: function (res) {
+                alert(res.errorCode);
+                alert(res.msg);
+            }
+        });
+     });
+</script>
+

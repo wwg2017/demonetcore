@@ -1,0 +1,13 @@
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\AddRegistService.deps.json
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\AddRegistService.dll
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\AddRegistService.pdb
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\BaseCore.dll
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\BusinessLibrary.dll
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\BusinessLibrary.pdb
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\bin\Release\netcoreapp2.0\BaseCore.pdb
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\obj\Release\netcoreapp2.0\AddRegistService.csprojResolveAssemblyReference.cache
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\obj\Release\netcoreapp2.0\AddRegistService.csproj.CoreCompileInputs.cache
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\obj\Release\netcoreapp2.0\AddRegistService.AssemblyInfoInputs.cache
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\obj\Release\netcoreapp2.0\AddRegistService.AssemblyInfo.cs
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\obj\Release\netcoreapp2.0\AddRegistService.dll
+C:\Users\wwg\Source\repos\DemoNetCore\AddImportToolService\obj\Release\netcoreapp2.0\AddRegistService.pdb

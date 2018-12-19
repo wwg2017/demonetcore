@@ -1,0 +1,173 @@
+﻿<style>
+    body, html, div, header {
+        margin: 0;
+        padding: 0;
+    }
+
+    #icon_header {
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        position: relative;
+        z-index: 5;
+        zoom: 1;
+        vertical-align: middle;
+        background: #fff;
+        margin: auto;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+        #icon_header > a {
+            position: absolute;
+            z-index: 5;
+            zoom: 1;
+            top: 0;
+            width: 45px;
+            height: 45px;
+            vertical-align: middle;
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+    #confirm_location {
+        right: 0;
+    }
+
+    #icon_header div {
+        text-align: center;
+    }
+
+    #r-result {
+        width: 90%;
+        background: white;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+        #r-result input {
+            border: none;
+            background: none;
+            outline: none;
+            padding-left: 2%;
+            width: 96%;
+        }
+</style>
+
+<header id="icon_header">
+    <div>
+        选择地址
+    </div>
+    <a href="javascript:;" id="confirm_location">确定</a>
+</header>
+
+<div id="map_show"></div>
+<div id="r-result">
+    <input type="text" id="suggestId" placeholder="请输入地点" />
+</div>
+<div id="searchResultPanel" style="display:none;"></div>
+<!--引入百度地图API-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=iBM9rbzTH2dMZW7MbYMYmFgb"></script>
+<script>
+    function AddMap(){
+        //设置地图容器高度
+        var screenH=window.innerHeight;
+        var headerH=this.elById("icon_header").offsetHeight;
+        this.elById("map_show").style.height=screenH-headerH+"px";
+    }
+
+  
+    AddMap.prototype.init=function(el,p){
+        var point={
+            lng:116.404113,
+            lat:39.914965
+        };
+        if(p && p.lng && p.lat){
+            point.lng=p.lng;
+            point.lat=p.lat;
+        }
+        this.m = new BMap.Map(el);      //实例化地图
+        this.p = new BMap.Point(point.lng,point.lat);
+
+        this.m.enableContinuousZoom();    //启用地图惯性拖拽
+        this.m.enableScrollWheelZoom();   //启用滚轮放大缩小
+        this.m.centerAndZoom(this.p, 12);  //设置地图显示中间点、地图显示级别
+
+        this.addMaker(this.p);
+        this.search();               //搜索
+        this.getLocation();
+    };
+
+    //获取坐标点位置
+    AddMap.prototype.getLocation=function(){
+        var _this=this;
+        var confirm=this.elById("confirm_location");
+        confirm.addEventListener("click",function(){
+            var makerPoint=_this.makerPoint();
+            console.log(makerPoint)
+        });
+    };
+
+    AddMap.prototype.elById=function(id) {
+        return document.getElementById(id);
+    };
+
+    //添加坐标显示
+    AddMap.prototype.addMaker=function(location){
+        var mk = new BMap.Marker(location);
+        mk.enableDragging();        //marker可拖拽
+        mk.enableMassClear();
+        this.m.addOverlay(mk); //在地图中添加marker
+
+        this.makerPoint=function(){
+            return mk.getPosition(); //返回当前坐标
+        };
+
+    };
+
+    //搜索
+    AddMap.prototype.search=function(){
+        var _this=this;
+        var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+                {
+                    "input" : "suggestId",
+                    "location" : _this.m
+                }
+        );
+        ac.addEventListener("onconfirm", function(e) {    //鼠标点击下拉列表后的事件
+            var _value = e.item.value;
+            myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+            _this.elById("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+            _this.setPlace(_this.m);
+        });
+    };
+
+    //定位到具体位置
+    AddMap.prototype.setPlace=function(m){
+        var _this=this;
+        m.clearOverlays();    //清除地图上所有覆盖物
+        function myFun(){
+            var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+            m.centerAndZoom(pp, 15);  //设置地图显示中间点、地图显示级别
+            _this.addMaker(pp);
+        }
+        var local = new BMap.LocalSearch(m, { //智能搜索
+            onSearchComplete: myFun
+        });
+        local.search(myValue);
+    };
+
+    var mapInclude=new AddMap();
+
+    //初始化地图
+    //需传入容器DOM（id），可传坐标点定位
+    mapInclude.init("map_show",{lng:104.072247,lat:30.663436});
+
+</script>
