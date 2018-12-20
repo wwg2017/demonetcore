@@ -8040,11 +8040,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\AddImportToolService\\AddRegistService.csproj",
+      "projectUniqueName": "I:\\Git仓储\\demonetcore\\AddImportToolService\\AddRegistService.csproj",
       "projectName": "AddRegistService",
-      "projectPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\AddImportToolService\\AddRegistService.csproj",
+      "projectPath": "I:\\Git仓储\\demonetcore\\AddImportToolService\\AddRegistService.csproj",
       "packagesPath": "C:\\Users\\wwg\\.nuget\\packages\\",
-      "outputPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\AddImportToolService\\obj\\",
+      "outputPath": "I:\\Git仓储\\demonetcore\\AddImportToolService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wwg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8062,11 +8062,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BaseCore\\BaseCore.csproj": {
-              "projectPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BaseCore\\BaseCore.csproj"
+            "I:\\Git仓储\\demonetcore\\BaseCore\\BaseCore.csproj": {
+              "projectPath": "I:\\Git仓储\\demonetcore\\BaseCore\\BaseCore.csproj"
             },
-            "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BusinessLibrary\\BusinessLibrary.csproj": {
-              "projectPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BusinessLibrary\\BusinessLibrary.csproj"
+            "I:\\Git仓储\\demonetcore\\BusinessLibrary\\BusinessLibrary.csproj": {
+              "projectPath": "I:\\Git仓储\\demonetcore\\BusinessLibrary\\BusinessLibrary.csproj"
             }
           }
         }

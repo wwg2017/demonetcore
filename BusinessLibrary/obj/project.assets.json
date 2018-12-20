@@ -8020,11 +8020,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BusinessLibrary\\BusinessLibrary.csproj",
+      "projectUniqueName": "I:\\Git仓储\\demonetcore\\BusinessLibrary\\BusinessLibrary.csproj",
       "projectName": "BusinessLibrary",
-      "projectPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BusinessLibrary\\BusinessLibrary.csproj",
+      "projectPath": "I:\\Git仓储\\demonetcore\\BusinessLibrary\\BusinessLibrary.csproj",
       "packagesPath": "C:\\Users\\wwg\\.nuget\\packages\\",
-      "outputPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BusinessLibrary\\obj\\",
+      "outputPath": "I:\\Git仓储\\demonetcore\\BusinessLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\wwg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8042,8 +8042,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BaseCore\\BaseCore.csproj": {
-              "projectPath": "I:\\Git仓储\\democores\\DemoNetCore\\DemoNetCore\\BaseCore\\BaseCore.csproj"
+            "I:\\Git仓储\\demonetcore\\BaseCore\\BaseCore.csproj": {
+              "projectPath": "I:\\Git仓储\\demonetcore\\BaseCore\\BaseCore.csproj"
             }
           }
         }
