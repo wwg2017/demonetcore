@@ -25,3 +25,12 @@ I:\Git仓储\democores\DemoNetCore\DemoNetCore\BaseCore\obj\Debug\netcoreapp2.0\
 I:\Git仓储\democores\DemoNetCore\DemoNetCore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.dll
 I:\Git仓储\democores\DemoNetCore\DemoNetCore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.pdb
 I:\Git仓储\democores\DemoNetCore\DemoNetCore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.csprojAssemblyReference.cache
+I:\Git仓储\demonetcore\BaseCore\bin\Debug\netcoreapp2.0\BaseCore.deps.json
+I:\Git仓储\demonetcore\BaseCore\bin\Debug\netcoreapp2.0\BaseCore.dll
+I:\Git仓储\demonetcore\BaseCore\bin\Debug\netcoreapp2.0\BaseCore.pdb
+I:\Git仓储\demonetcore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.csprojAssemblyReference.cache
+I:\Git仓储\demonetcore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.csproj.CoreCompileInputs.cache
+I:\Git仓储\demonetcore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.AssemblyInfoInputs.cache
+I:\Git仓储\demonetcore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.AssemblyInfo.cs
+I:\Git仓储\demonetcore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.dll
+I:\Git仓储\demonetcore\BaseCore\obj\Debug\netcoreapp2.0\BaseCore.pdb
