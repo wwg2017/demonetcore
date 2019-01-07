@@ -21,6 +21,7 @@ using NLog.Web;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Mvc.Internal;
 using BaseCore.Untity;
+using DemoNetCore.Controller.Filters;
 
 namespace DemoNetCore
 {
@@ -46,7 +47,7 @@ namespace DemoNetCore
             services.Configure<DBConfig>(Configuration.GetSection("DBConfig"));
             //repository = LogManager.CreateRepository("NETCoreRepository");
             //XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));   
-
+            //services.AddMvc(o => o.Filters.Add<MyFilter>());//异常过滤器全局
 
         }
 

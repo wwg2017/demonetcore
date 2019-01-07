@@ -21,28 +21,29 @@ using System.Threading;
 using static System.Net.Mime.MediaTypeNames;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
-
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DemoNetCore.Controller.Filters;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace BusinessLibrary
-{
+{    
     public class HomeController : Controller
     {       
         private  readonly IStudentService _studentsverVice;
         private readonly MemoryCacheHelper _cache;
-        //private ILog log = LogManager.GetLogger(Startup.repository.Name, typeof(HomeController));
+        //private ILog log = LogManager.GetLogger(Startup.repository.Name, typeof(HomeController));      
         public HomeController(IStudentService studentsverVice, MemoryCacheHelper cache)
         {            
             _studentsverVice = studentsverVice;
             _cache = cache;
-        }
+        }   
+        [MyFilter]
         public IActionResult Index()
          {
 
+
+            var pk = 0;
+            var j = 8 / pk;
 
             Image();
 
@@ -172,7 +173,7 @@ namespace BusinessLibrary
            //定时任务
 
             return View();
-        }
+        }       
         public class Demo
         {
             public int M { get; set; }
@@ -276,5 +277,5 @@ namespace BusinessLibrary
              var imageInfo = ImageHelper.GetImageInfo(qrcodeLogoPath);
                        
         }
-    }
+    }   
 }
