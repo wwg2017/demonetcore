@@ -42,8 +42,8 @@ namespace BusinessLibrary
          {
 
 
-            var pk = 0;
-            var j = 8 / pk;
+            //var pk = 0;
+            //var j = 8 / pk;
 
             Image();
 
