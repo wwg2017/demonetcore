@@ -27,6 +27,7 @@ namespace BaseCore.Untity
                     conn = DbConnectionFactory.GetInstance(_dbConfig.QlwDB.DbDriverType, _dbConfig.QlwDB.ConnectionString);
                     break;
             }
+            conn.Open();
             return conn;
         }                
     }

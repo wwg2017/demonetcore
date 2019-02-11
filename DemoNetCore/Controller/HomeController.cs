@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using DemoNetCore.Controller.Filters;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Diagnostics;
 
 namespace BusinessLibrary
 {    
@@ -206,10 +207,10 @@ namespace BusinessLibrary
             return View();
         }
         public IActionResult Save(Student model)
-        {
+        {            
             var k = _studentsverVice.Insert(model);
-
             var m = "rwrewrwer" + "<br/>" + 8943543435;
+
             return Json(m);
         }
         /// <summary>
