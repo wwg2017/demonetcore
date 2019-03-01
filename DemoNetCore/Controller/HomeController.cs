@@ -25,6 +25,12 @@ using System.Linq;
 using DemoNetCore.Controller.Filters;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Diagnostics;
+using Newtonsoft.Json;
+using BusinessLibrary.Model;
+using System.Web;
+using System.Net.Http.Headers;
+using Aspose.Cells;
+using Aspose.Slides;
 
 namespace BusinessLibrary
 {    
@@ -41,8 +47,8 @@ namespace BusinessLibrary
         [MyFilter]
         public IActionResult Index()
          {
-
-
+           
+            
             //var pk = 0;
             //var j = 8 / pk;
 
@@ -277,6 +283,127 @@ namespace BusinessLibrary
             
              var imageInfo = ImageHelper.GetImageInfo(qrcodeLogoPath);
                        
+        }
+        public void UpFile()
+        {                    
+            long size = 0;
+            var files = Request.Form.Files;
+            foreach (var file in files)
+            {
+                var filename = ContentDispositionHeaderValue
+                                .Parse(file.ContentDisposition)
+                                .FileName
+                                .Trim('"');
+                filename = Directory.GetCurrentDirectory()+"\\wwwroot\\Files\\fileUp" + $@"\{filename}";
+                size += file.Length;
+                using (FileStream fs = System.IO.File.Create(filename))
+                {
+                    file.CopyTo(fs);
+                    fs.Flush();
+                }
+            }           
+        }
+
+        public string Html(string path)
+        {
+            string pathname = Directory.GetCurrentDirectory() + "\\wwwroot\\Files\\fileUp\\" + path;//原始文件
+            string fileDire = Directory.GetCurrentDirectory() + "//wwwroot//Files//";
+            //string sourceDoc = Path.Combine(fileDire, fileName);
+            string saveDoc = "";
+            string docExtendName = System.IO.Path.GetExtension(path).ToLower();
+            bool result = false;
+            var returnhtml = "";
+            
+            if (docExtendName.Contains("pdf"))
+            {
+                //pdf模板文件
+                var pathnames ="/Files/fileUp/" + path;////对于这种pfd如要嵌套在html中  所以走相对路径
+                //pdf模板文件，对于pdf需要先建立个temppdf.html把对应的js都引入到里面，，然后 后端生成html嵌套住pdf文件，，最后 js生成pdf显示
+                string tempFile = Path.Combine(fileDire, "temppdf.html");
+                saveDoc = Path.Combine(fileDire, "viewFiles/onlinepdf.html");
+                returnhtml = "/Files/viewFiles/onlinepdf.html";
+                result = PdfToHtml(
+                      pathnames,
+                       tempFile,
+                     saveDoc);
+            }
+            else 
+            {
+                saveDoc = Path.Combine(fileDire, "viewFiles//onlineview.html");
+                returnhtml = "/Files/viewFiles/onlineview.html";
+                result = OfficeDocumentToHtml(
+                      pathname,
+                     saveDoc);
+            }
+            return returnhtml;
+        }
+        private bool OfficeDocumentToHtml(string sourceDoc, string saveDoc)
+        {
+            bool result = false;
+
+            //获取文件扩展名
+            string docExtendName = System.IO.Path.GetExtension(sourceDoc).ToLower();
+            switch (docExtendName)
+            {
+                case ".doc":
+                case ".docx":
+                    Aspose.Words.Document doc = new Aspose.Words.Document(sourceDoc);
+                    doc.Save(saveDoc, Aspose.Words.SaveFormat.Html);
+
+                    result = true;
+                    break;
+                case ".xls":
+                case ".xlsx":
+                    Workbook workbook = new Workbook(sourceDoc);
+                    workbook.Save(saveDoc, SaveFormat.Html);
+
+                    result = true;
+                    break;
+                case ".ppt":
+                case ".pptx":
+                    //templateFile = templateFile.Replace("/", "\\");
+                    //string templateFile = sourceDoc;
+                    //templateFile = templateFile.Replace("/", "\\");
+                    Presentation pres = new Presentation(sourceDoc);
+                    pres.Save(saveDoc, Aspose.Slides.Export.SaveFormat.Html);
+
+                    result = true;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+        private bool PdfToHtml(string fileName, string tempFile, string saveDoc)
+        {
+            //---------------------读html模板页面到stringbuilder对象里---- 
+            StringBuilder htmltext = new StringBuilder();
+            using (StreamReader sr = new StreamReader(tempFile)) //模板页路径
+            {
+                String line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    htmltext.Append(line);
+                }
+                sr.Close();
+            }
+
+            fileName = fileName.Replace("\\", "/");
+            //----------替换htm里的标记为你想加的内容 
+            htmltext.Replace("$PDFFILEPATH", fileName);
+
+            //----------生成htm文件------------------―― 
+            using (StreamWriter sw = new StreamWriter(saveDoc, false,
+                System.Text.Encoding.GetEncoding("utf-8"))) //保存地址
+            {
+                sw.WriteLine(htmltext);
+                sw.Flush();
+                sw.Close();
+
+            }
+
+            return true;
         }
     }   
 }

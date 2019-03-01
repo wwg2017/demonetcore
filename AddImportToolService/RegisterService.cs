@@ -13,7 +13,7 @@ namespace AddRegistService
         {
             services.AddTransient<IStudentService, StudentService>();
             services.AddTransient<ConfigHelper>();
-            services.AddTransient<MemoryCacheHelper>();        
+            services.AddTransient<MemoryCacheHelper>();   
         }
     }
 }

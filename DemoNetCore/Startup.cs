@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Mvc.Internal;
 using BaseCore.Untity;
 using DemoNetCore.Controller.Filters;
+using Microsoft.Extensions.FileProviders;
 
 namespace DemoNetCore
 {
@@ -48,6 +49,7 @@ namespace DemoNetCore
             //repository = LogManager.CreateRepository("NETCoreRepository");
             //XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));   
             //services.AddMvc(o => o.Filters.Add<MyFilter>());//异常过滤器全局
+
 
         }
 
@@ -76,6 +78,12 @@ namespace DemoNetCore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
                 
+            });
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+          Path.Combine(Directory.GetCurrentDirectory(), @"StaticFiles")),
+                RequestPath = new PathString("/StaticFiles")
             });
         }
     }

@@ -24,7 +24,7 @@ namespace BusinessLibrary
             _p = p;
         }
         public int Insert(Student model)
-        {
+        {           
             Addlist();
             string sql = @" insert into Student(Age,Name) values (@Age,@Name);";
             using (var conn = _p.GetConn())
@@ -36,24 +36,24 @@ namespace BusinessLibrary
         {
             List<Student> list = new List<Student>();
 
-            for (int i = 0; i <500000; i++)
+            for (int i = 0; i <50000; i++)
             {
                 Student stnew = new Student();
                 stnew.Age = i.ToString();
                 stnew.Name = "张";
                 list.Add(stnew);
             }
-            Pinjiesql(list);
+            InsertDapper(list);
         }
         /// <summary>
         /// 效率也差次之
         /// </summary>
         /// <param name="list"></param>
-        public void InsertList(List<Student>list)
+        public void InsertTable(List<Student>list)
         {            
             Stopwatch sp = new Stopwatch();
             sp.Start();
-            string sqlInsert = @" insert into Student(Age,Name) values (@Age,@Name);";
+            string sqlInsert = @" insert into Student(Age,Name) value (@Age,@Name);";
             DataTable dt = new DataTable();
             dt.Columns.Add("Age", typeof(string));
             dt.Columns.Add("Name", typeof(string));
@@ -65,8 +65,6 @@ namespace BusinessLibrary
                 mySqlDataAdapter.InsertCommand.Parameters.Add("@Age", MySqlDbType.String, 20, "Age");
                 mySqlDataAdapter.InsertCommand.Parameters.Add("@Name", MySqlDbType.String, 20, "Name");
                 mySqlDataAdapter.InsertCommand.UpdatedRowSource = UpdateRowSource.None;
-
-
                 foreach (var item in list)
                 {
                     DataRow row = dt.NewRow();
@@ -78,14 +76,14 @@ namespace BusinessLibrary
                 mySqlDataAdapter.Update(dt);
                 transaction.Commit();
                 sp.Stop();
-                LoggerManager.Info("时间监控："+sp.ElapsedMilliseconds+"秒杀");
+                LoggerManager.Info("时间监控："+sp.ElapsedMilliseconds+ "毫秒");
             }           
         }
         /// <summary>
         /// 效率最差
         /// </summary>
         /// <param name="list"></param>
-        public void InsertDappter(List<Student> list)
+        public void InsertDapper(List<Student> list)
         {
             Stopwatch sp = new Stopwatch();
             sp.Start();
@@ -93,12 +91,12 @@ namespace BusinessLibrary
             {
                 using (var transaction = conn.BeginTransaction())
                 {                    
-                    var strSqlMethod = new StringBuilder();                 
+                    var strSql = new StringBuilder();                 
                     try
                     {
 
-                        strSqlMethod.Append(" insert into Student(Age,Name) values (@Age,@Name);");
-                        conn.Execute(strSqlMethod.ToString(), list, transaction);
+                        strSql.Append(" insert into Student(Age,Name) value (@Age,@Name);");
+                        conn.Execute(strSql.ToString(), list, transaction);
                         transaction.Commit();                       
                     }
                     catch (Exception ex)
@@ -108,13 +106,13 @@ namespace BusinessLibrary
                 }
             }
             sp.Stop();
-            LoggerManager.Info("时间监控：" + sp.ElapsedMilliseconds + "秒杀");
+            LoggerManager.Info("时间监控：" + sp.ElapsedMilliseconds + "毫秒");
         }
         /// <summary>
         /// 效率最高
         /// </summary>
         /// <param name="list"></param>
-        public void Pinjiesql(List<Student> list)
+        public void InsertBuilder(List<Student> list)
         {
             var strSql = new StringBuilder();          
             strSql.Append("insert into Student(Age,Name) value ");
@@ -142,7 +140,7 @@ namespace BusinessLibrary
                 }
             }
             sp.Stop();
-            LoggerManager.Info("时间监控：" + sp.ElapsedMilliseconds + "秒杀");
+            LoggerManager.Info("时间监控：" + sp.ElapsedMilliseconds + "毫秒");
         }
     }
 }

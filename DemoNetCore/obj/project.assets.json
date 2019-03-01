@@ -15,6 +15,47 @@
           "lib/netstandard2.0/Alexinea.Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
+      "Aspose.Cells/19.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Aspose.Cells.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.Cells.dll": {}
+        }
+      },
+      "Aspose.Slides.NET/18.12.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0",
+          "System.Text.Encoding.CodePages": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Aspose.Slides.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.Slides.dll": {}
+        }
+      },
+      "Aspose.Words/19.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.68.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.ILGeneration": "4.3.0",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Aspose.Words.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aspose.Words.dll": {}
+        }
+      },
       "Autofac/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2691,7 +2732,7 @@
           "Microsoft.NETCore.DotNetAppHost": "2.0.0"
         }
       },
-      "Microsoft.NETCore.Platforms/2.0.0": {
+      "Microsoft.NETCore.Platforms/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -2707,6 +2748,15 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Office.Interop.Word/15.0.4797.1003": {
+        "type": "package",
+        "compile": {
+          "lib/net20/Microsoft.Office.Interop.Word.dll": {}
+        },
+        "runtime": {
+          "lib/net20/Microsoft.Office.Interop.Word.dll": {}
         }
       },
       "Microsoft.Rest.ClientRuntime/2.3.8": {
@@ -2886,6 +2936,24 @@
             "rid": "unix"
           },
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -3996,6 +4064,29 @@
           "ref/netstandard1.5/System.Diagnostics.Tracing.dll": {}
         }
       },
+      "System.Drawing.Common/4.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.Win32.SystemEvents": "4.5.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Dynamic.Runtime/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4606,7 +4697,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -5126,14 +5217,14 @@
           "ref/netstandard1.3/System.Text.Encoding.dll": {}
         }
       },
-      "System.Text.Encoding.CodePages/4.5.0": {
+      "System.Text.Encoding.CodePages/4.5.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+          "Microsoft.NETCore.Platforms": "2.1.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         },
         "compile": {
-          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -5539,6 +5630,20 @@
           "lib/netstandard2.0/zxing.dll": {}
         }
       },
+      "ZXing.Net.Bindings.ZKWeb.System.Drawing/0.16.4": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "ZKWeb.System.Drawing": "4.0.1",
+          "ZXing.Net": "0.16.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/ZXing.ZKWeb.System.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZXing.ZKWeb.System.Drawing.dll": {}
+        }
+      },
       "AddRegistService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5566,6 +5671,7 @@
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.Extensions.Options": "2.1.1",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.1",
+          "Microsoft.Office.Interop.Word": "15.0.4797.1003",
           "MicrosoftExtensions.Options.DedupChangeExtensions": "1.0.2",
           "MySql.Data": "8.0.11",
           "NLog": "4.5.3",
@@ -5616,6 +5722,120 @@
         "lib/netstandard1.6/Alexinea.Autofac.Extensions.DependencyInjection.xml",
         "lib/netstandard2.0/Alexinea.Autofac.Extensions.DependencyInjection.dll",
         "lib/netstandard2.0/Alexinea.Autofac.Extensions.DependencyInjection.xml"
+      ]
+    },
+    "Aspose.Cells/19.2.0": {
+      "sha512": "5nBPYeDLY1gwxtIcwv0MoThn3KaIOocqfSMHy6AYeBJjYIvL2rUdI1060+xQPkhViymbvFjhAE14D2K5YbjCGg==",
+      "type": "package",
+      "path": "aspose.cells/19.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Help/Aspose.Cells For .NET Documentation.chm",
+        "License/thirdpartylicenses.Aspose.Cells.for.NET.pdf",
+        "acw_client/acwmain.js",
+        "acw_client/b1.gif",
+        "acw_client/b2.gif",
+        "acw_client/b3.gif",
+        "acw_client/b4.gif",
+        "acw_client/b5.gif",
+        "acw_client/b6.gif",
+        "acw_client/b7.gif",
+        "acw_client/b8.gif",
+        "acw_client/collapse.gif",
+        "acw_client/colordlg.htm",
+        "acw_client/dot.gif",
+        "acw_client/dropdown.gif",
+        "acw_client/expand.gif",
+        "acw_client/findDlg.htm",
+        "acw_client/findDlg.js",
+        "acw_client/fontdlg.htm",
+        "acw_client/fontdlg.js",
+        "acw_client/fontdlg_l.htm",
+        "acw_client/fontdlg_l.js",
+        "acw_client/form.gif",
+        "acw_client/gridwebform.js",
+        "acw_client/headerBg.gif",
+        "acw_client/lang_cn.js",
+        "acw_client/lang_en.js",
+        "acw_client/larrow.gif",
+        "acw_client/loading.gif",
+        "acw_client/menu.css",
+        "acw_client/rarrow.gif",
+        "acw_client/save.gif",
+        "acw_client/star.gif",
+        "acw_client/submit.gif",
+        "acw_client/undo.gif",
+        "acw_client/updating.gif",
+        "acw_client/x.gif",
+        "aspose.cells.19.2.0.nupkg.sha512",
+        "aspose.cells.nuspec",
+        "lib/Xamarin.Android/Aspose.Cells.dll",
+        "lib/Xamarin.Android/Aspose.Cells.xml",
+        "lib/Xamarin.iOS/Aspose.Cells.dll",
+        "lib/Xamarin.iOS/Aspose.Cells.xml",
+        "lib/net20/Aspose.Cells.GridDesktop.dll",
+        "lib/net20/Aspose.Cells.GridDesktop.xml",
+        "lib/net20/Aspose.Cells.GridWeb.dll",
+        "lib/net20/Aspose.Cells.GridWeb.xml",
+        "lib/net20/Aspose.Cells.dll",
+        "lib/net20/Aspose.Cells.xml",
+        "lib/net35/Aspose.Cells.dll",
+        "lib/net35/Aspose.Cells.xml",
+        "lib/net40-client/Aspose.Cells.dll",
+        "lib/net40-client/Aspose.Cells.xml",
+        "lib/net40/Aspose.Cells.dll",
+        "lib/net40/Aspose.Cells.xml",
+        "lib/netstandard2.0/Aspose.Cells.dll",
+        "lib/netstandard2.0/Aspose.Cells.xml"
+      ]
+    },
+    "Aspose.Slides.NET/18.12.0": {
+      "sha512": "rQlYE4o3UEQ9j2qxTXSioovSTLGhobe4nZijw3vCbcae/P5CaDRpGf3wkuknseceARlLrEXiAfzXOXh2N6Nnsg==",
+      "type": "package",
+      "path": "aspose.slides.net/18.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspose.slides.net.18.12.0.nupkg.sha512",
+        "aspose.slides.net.nuspec",
+        "lib/net2.0/Aspose.Slides.dll",
+        "lib/net2.0/Aspose.Slides.xml",
+        "lib/net3.5-client/Aspose.Slides.dll",
+        "lib/net3.5-client/Aspose.Slides.xml",
+        "lib/net4.0-client/Aspose.Slides.dll",
+        "lib/net4.0-client/Aspose.Slides.xml",
+        "lib/netstandard2.0/Aspose.Slides.dll",
+        "lib/netstandard2.0/Aspose.Slides.xml"
+      ]
+    },
+    "Aspose.Words/19.2.0": {
+      "sha512": "5HxpqWSaZYpI+3bt0gH0bdyn8npH3vrRm++IbnbmjjnJFbJ7AsVtlFL5hvsq9QLmLHpRZr8o+hRXQcSXBLoZSg==",
+      "type": "package",
+      "path": "aspose.words/19.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Aspose.Words.chm",
+        "aspose.words.19.2.0.nupkg.sha512",
+        "aspose.words.nuspec",
+        "lib/MonoAndroid23/Aspose.Words.dll",
+        "lib/MonoAndroid23/Aspose.Words.xml",
+        "lib/Xamarin.Mac20/Aspose.Words.dll",
+        "lib/Xamarin.Mac20/Aspose.Words.xml",
+        "lib/Xamarin.iOS10/Aspose.Words.dll",
+        "lib/Xamarin.iOS10/Aspose.Words.xml",
+        "lib/net20/Aspose.Words.dll",
+        "lib/net20/Aspose.Words.xml",
+        "lib/net35-client/Aspose.Words.dll",
+        "lib/net35-client/Aspose.Words.xml",
+        "lib/net40-client/Aspose.Words.dll",
+        "lib/net40-client/Aspose.Words.xml",
+        "lib/net40/Aspose.Words.dll",
+        "lib/net40/Aspose.Words.xml",
+        "lib/netstandard2.0/Aspose.Words.dll",
+        "lib/netstandard2.0/Aspose.Words.xml",
+        "thirdpartylicenses-Aspose.Words for .NET.txt"
       ]
     },
     "Autofac/4.0.0": {
@@ -8526,15 +8746,17 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+    "Microsoft.NETCore.Platforms/2.1.2": {
+      "sha512": "7J7veIH7Mu6zc4llWnM7YRgTv9+Ew+JWkkDj0K7cEe8wuFA6HRt6STtwux2g+qjpDXeYeWsK0UQ3uIgRiTYHIg==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/2.0.0",
+      "path": "microsoft.netcore.platforms/2.1.2",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.2.1.2.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -8552,6 +8774,18 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Office.Interop.Word/15.0.4797.1003": {
+      "sha512": "J8Et7cMnQTlB4oBh70f8drHQr0kB9jWp3d6tgvrs9eDb+8G/Aq83JGgCODSC6IW21Mu7w5otzfsWU8q7wnehGw==",
+      "type": "package",
+      "path": "microsoft.office.interop.word/15.0.4797.1003",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Microsoft.Office.Interop.Word.dll",
+        "microsoft.office.interop.word.15.0.4797.1003.nupkg.sha512",
+        "microsoft.office.interop.word.nuspec"
       ]
     },
     "Microsoft.Rest.ClientRuntime/2.3.8": {
@@ -8815,6 +9049,26 @@
         "runtimes/win/lib/net461/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll",
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Win32.SystemEvents/4.5.0": {
+      "sha512": "LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "ref/net461/Microsoft.Win32.SystemEvents.dll",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -10963,6 +11217,39 @@
         "system.diagnostics.tracing.nuspec"
       ]
     },
+    "System.Drawing.Common/4.5.0": {
+      "sha512": "AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Dynamic.Runtime/4.3.0": {
       "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
       "type": "package",
@@ -12683,10 +12970,10 @@
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "hMkdWxksypQlFXB7JamQegDscxEAQO4FHd/lw/zlSZU9dZgAij65xjCrXer183wvoNAzJic5zzjj2oc9/dloWg==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.1",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -12702,7 +12989,7 @@
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -13876,10 +14163,10 @@
         "system.text.encoding.nuspec"
       ]
     },
-    "System.Text.Encoding.CodePages/4.5.0": {
-      "sha512": "S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
+    "System.Text.Encoding.CodePages/4.5.1": {
+      "sha512": "Eu3dyUUqDFkuskrrK54VLWC41EVANJNo5vzjojnGAphH+FV63NJg3zs5x0TvRaYDTZ2y+86eIOK43Hg2NXiw7w==",
       "type": "package",
-      "path": "system.text.encoding.codepages/4.5.0",
+      "path": "system.text.encoding.codepages/4.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -13897,19 +14184,6 @@
         "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/netstandard1.3/System.Text.Encoding.CodePages.dll",
-        "ref/netstandard1.3/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/de/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/es/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/fr/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/it/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ja/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ko/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ru/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/zh-hans/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/zh-hant/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "ref/netstandard2.0/System.Text.Encoding.CodePages.xml",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
@@ -13918,7 +14192,7 @@
         "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "system.text.encoding.codepages.4.5.0.nupkg.sha512",
+        "system.text.encoding.codepages.4.5.1.nupkg.sha512",
         "system.text.encoding.codepages.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -15018,6 +15292,23 @@
         "zxing.net.nuspec"
       ]
     },
+    "ZXing.Net.Bindings.ZKWeb.System.Drawing/0.16.4": {
+      "sha512": "vzoVi/De75DjnmoR67toASxfPFbwn0QeSh4JqNgguSLSkhnHhs9k1cYxYtxqXKjQ+rOr+FkekeHvrN0Mp0/Onw==",
+      "type": "package",
+      "path": "zxing.net.bindings.zkweb.system.drawing/0.16.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/ZXing.ZKWeb.System.Drawing.XML",
+        "lib/net45/ZXing.ZKWeb.System.Drawing.dll",
+        "lib/net45/ZXing.ZKWeb.System.Drawing.pdb",
+        "lib/netstandard2.0/ZXing.ZKWeb.System.Drawing.dll",
+        "lib/netstandard2.0/ZXing.ZKWeb.System.Drawing.pdb",
+        "lib/netstandard2.0/ZXing.ZKWeb.System.Drawing.xml",
+        "zxing.net.bindings.zkweb.system.drawing.0.16.4.nupkg.sha512",
+        "zxing.net.bindings.zkweb.system.drawing.nuspec"
+      ]
+    },
     "AddRegistService/1.0.0": {
       "type": "project",
       "path": "../AddImportToolService/AddRegistService.csproj",
@@ -15038,11 +15329,16 @@
     ".NETCoreApp,Version=v2.0": [
       "AddRegistService >= 1.0.0",
       "Alexinea.Autofac.Extensions.DependencyInjection >= 4.2.0",
+      "Aspose.Cells >= 19.2.0",
+      "Aspose.Slides.NET >= 18.12.0",
+      "Aspose.Words >= 19.2.0",
       "BaseCore >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
-      "Quartz >= 3.0.7"
+      "Quartz >= 3.0.7",
+      "System.Text.Encoding.CodePages >= 4.5.1",
+      "ZXing.Net.Bindings.ZKWeb.System.Drawing >= 0.16.4"
     ]
   },
   "packageFolders": {
@@ -15099,6 +15395,18 @@
             "target": "Package",
             "version": "[4.2.0, )"
           },
+          "Aspose.Cells": {
+            "target": "Package",
+            "version": "[19.2.0, )"
+          },
+          "Aspose.Slides.NET": {
+            "target": "Package",
+            "version": "[18.12.0, )"
+          },
+          "Aspose.Words": {
+            "target": "Package",
+            "version": "[19.2.0, )"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.0, )"
@@ -15115,6 +15423,14 @@
           "Quartz": {
             "target": "Package",
             "version": "[3.0.7, )"
+          },
+          "System.Text.Encoding.CodePages": {
+            "target": "Package",
+            "version": "[4.5.1, )"
+          },
+          "ZXing.Net.Bindings.ZKWeb.System.Drawing": {
+            "target": "Package",
+            "version": "[0.16.4, )"
           }
         },
         "imports": [
@@ -15124,5 +15440,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1”而不是项目目标框架“.NETCoreApp,Version=v2.0”还原包“Microsoft.Office.Interop.Word 15.0.4797.1003”。此包可能与项目不完全兼容。",
+      "libraryId": "Microsoft.Office.Interop.Word",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

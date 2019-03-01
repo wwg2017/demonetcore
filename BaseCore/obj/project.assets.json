@@ -595,6 +595,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Office.Interop.Word/15.0.4797.1003": {
+        "type": "package",
+        "compile": {
+          "lib/net20/Microsoft.Office.Interop.Word.dll": {}
+        },
+        "runtime": {
+          "lib/net20/Microsoft.Office.Interop.Word.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2332,6 +2341,18 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Office.Interop.Word/15.0.4797.1003": {
+      "sha512": "J8Et7cMnQTlB4oBh70f8drHQr0kB9jWp3d6tgvrs9eDb+8G/Aq83JGgCODSC6IW21Mu7w5otzfsWU8q7wnehGw==",
+      "type": "package",
+      "path": "microsoft.office.interop.word/15.0.4797.1003",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Microsoft.Office.Interop.Word.dll",
+        "microsoft.office.interop.word.15.0.4797.1003.nupkg.sha512",
+        "microsoft.office.interop.word.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.5.0": {
@@ -5178,6 +5199,7 @@
       "Microsoft.Extensions.Options >= 2.1.1",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 2.1.1",
       "Microsoft.NETCore.App >= 2.0.0",
+      "Microsoft.Office.Interop.Word >= 15.0.4797.1003",
       "MicrosoftExtensions.Options.DedupChangeExtensions >= 1.0.2",
       "MySql.Data >= 8.0.11",
       "NLog >= 4.5.3",
@@ -5271,6 +5293,10 @@
             "version": "[2.0.0, )",
             "autoReferenced": true
           },
+          "Microsoft.Office.Interop.Word": {
+            "target": "Package",
+            "version": "[15.0.4797.1003, )"
+          },
           "MicrosoftExtensions.Options.DedupChangeExtensions": {
             "target": "Package",
             "version": "[1.0.2, )"
@@ -5319,5 +5345,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1”而不是项目目标框架“.NETCoreApp,Version=v2.0”还原包“Microsoft.Office.Interop.Word 15.0.4797.1003”。此包可能与项目不完全兼容。",
+      "libraryId": "Microsoft.Office.Interop.Word",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

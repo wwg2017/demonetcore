@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "61d1c360f97ba8cbc393d1e967162cf4414daf21"
+    "signature": "2b33c43e4e90e2107cf2e14176b5c51d3e8e26cd"
   },
   "compilationOptions": {},
   "targets": {
@@ -16,6 +16,7 @@
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.Extensions.Options": "2.1.1",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.1",
+          "Microsoft.Office.Interop.Word": "15.0.4797.1003",
           "MicrosoftExtensions.Options.DedupChangeExtensions": "1.0.2",
           "MySql.Data": "8.0.11",
           "NLog": "4.5.3",
@@ -406,6 +407,14 @@
         }
       },
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Office.Interop.Word/15.0.4797.1003": {
+        "runtime": {
+          "lib/net20/Microsoft.Office.Interop.Word.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.0.4797.1003"
+          }
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "dependencies": {
           "System.Memory": "4.5.1",
@@ -1392,6 +1401,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.Office.Interop.Word/15.0.4797.1003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J8Et7cMnQTlB4oBh70f8drHQr0kB9jWp3d6tgvrs9eDb+8G/Aq83JGgCODSC6IW21Mu7w5otzfsWU8q7wnehGw==",
+      "path": "microsoft.office.interop.word/15.0.4797.1003",
+      "hashPath": "microsoft.office.interop.word.15.0.4797.1003.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.5.0": {
       "type": "package",

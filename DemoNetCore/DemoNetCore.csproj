@@ -6,10 +6,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Files\**" />
+    <Content Remove="Files\**" />
+    <EmbeddedResource Remove="Files\**" />
+    <None Remove="Files\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Alexinea.Autofac.Extensions.DependencyInjection" Version="4.2.0" />
+    <PackageReference Include="Aspose.Cells" Version="19.2.0" />
+    <PackageReference Include="Aspose.Slides.NET" Version="18.12.0" />
+    <PackageReference Include="Aspose.Words" Version="19.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
     <PackageReference Include="Quartz" Version="3.0.7" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+    <PackageReference Include="ZXing.Net.Bindings.ZKWeb.System.Drawing" Version="0.16.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +31,16 @@
   <ItemGroup>
     <ProjectReference Include="..\AddImportToolService\AddRegistService.csproj" />
     <ProjectReference Include="..\BaseCore\BaseCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wenjian\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Aspose.Slides">
+      <HintPath>G:\解压\学习\OnlineView\DllImport\Aspose.Slides.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
