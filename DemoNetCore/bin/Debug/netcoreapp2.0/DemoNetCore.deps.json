@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a6cb81e265684b7d128fa916c15acc94e20e57be"
+    "signature": "6d9ab6bbc8b1f477e4aa74efa6b43ef1987b6882"
   },
   "compilationOptions": {
     "defines": [
@@ -26,16 +26,18 @@
         "dependencies": {
           "AddRegistService": "1.0.0",
           "Alexinea.Autofac.Extensions.DependencyInjection": "4.2.0",
-          "Aspose.Cells": "19.2.0",
-          "Aspose.Slides.NET": "18.12.0",
-          "Aspose.Words": "19.2.0",
           "BaseCore": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
           "Quartz": "3.0.7",
+          "System.Drawing.Common": "4.5.1",
           "System.Text.Encoding.CodePages": "4.5.1",
-          "ZXing.Net.Bindings.ZKWeb.System.Drawing": "0.16.4"
+          "ZKWeb.System.Drawing": "4.0.1",
+          "ZXing.Net.Bindings.ZKWeb.System.Drawing": "0.16.4",
+          "Aspose.Cells": "7.4.1.0",
+          "Aspose.Slides": "7.2.0.0",
+          "Aspose.Words": "13.2.0.0"
         },
         "runtime": {
           "DemoNetCore.dll": {}
@@ -57,53 +59,6 @@
         },
         "compile": {
           "lib/netstandard2.0/Alexinea.Autofac.Extensions.DependencyInjection.dll": {}
-        }
-      },
-      "Aspose.Cells/19.2.0": {
-        "dependencies": {
-          "System.Drawing.Common": "4.5.0",
-          "System.Text.Encoding.CodePages": "4.5.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Aspose.Cells.dll": {
-            "assemblyVersion": "19.2.0.0",
-            "fileVersion": "19.2.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Aspose.Cells.dll": {}
-        }
-      },
-      "Aspose.Slides.NET/18.12.0": {
-        "dependencies": {
-          "System.Drawing.Common": "4.5.0",
-          "System.Text.Encoding.CodePages": "4.5.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Aspose.Slides.dll": {
-            "assemblyVersion": "18.12.0.0",
-            "fileVersion": "18.12.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Aspose.Slides.dll": {}
-        }
-      },
-      "Aspose.Words/19.2.0": {
-        "dependencies": {
-          "SkiaSharp": "1.68.0",
-          "System.Reflection.Emit": "4.3.0",
-          "System.Reflection.Emit.ILGeneration": "4.3.0",
-          "System.Text.Encoding.CodePages": "4.5.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Aspose.Words.dll": {
-            "assemblyVersion": "19.2.0.0",
-            "fileVersion": "19.2.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Aspose.Words.dll": {}
         }
       },
       "Autofac/4.0.0": {
@@ -4114,29 +4069,29 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Drawing.Common/4.5.0": {
+      "System.Drawing.Common/4.5.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
           "Microsoft.Win32.SystemEvents": "4.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.26515.6"
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
           }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll": {
             "rid": "unix",
             "assetType": "runtime",
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.26515.6"
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
           },
           "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.6.26515.6"
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
           }
         },
         "compile": {
@@ -5448,6 +5403,39 @@
           "BusinessLibrary.dll": {}
         }
       },
+      "Aspose.Cells/7.4.1.0": {
+        "runtime": {
+          "Aspose.Cells.dll": {
+            "assemblyVersion": "7.4.1.0",
+            "fileVersion": "7.4.1.0"
+          }
+        },
+        "compile": {
+          "Aspose.Cells.dll": {}
+        }
+      },
+      "Aspose.Slides/7.2.0.0": {
+        "runtime": {
+          "Aspose.Slides.dll": {
+            "assemblyVersion": "7.2.0.0",
+            "fileVersion": "7.2.0.0"
+          }
+        },
+        "compile": {
+          "Aspose.Slides.dll": {}
+        }
+      },
+      "Aspose.Words/13.2.0.0": {
+        "runtime": {
+          "Aspose.Words.dll": {
+            "assemblyVersion": "13.2.0.0",
+            "fileVersion": "13.2.0.0"
+          }
+        },
+        "compile": {
+          "Aspose.Words.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -5633,27 +5621,6 @@
       "sha512": "sha512-b8XgJts061chQVG8OFTKwCBFVIGIoyHUUOPzAl/yFvCNheNelLOtoudZkx3pGSpmikvYguhtNw5xZbh6chk3UQ==",
       "path": "alexinea.autofac.extensions.dependencyinjection/4.2.0",
       "hashPath": "alexinea.autofac.extensions.dependencyinjection.4.2.0.nupkg.sha512"
-    },
-    "Aspose.Cells/19.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5nBPYeDLY1gwxtIcwv0MoThn3KaIOocqfSMHy6AYeBJjYIvL2rUdI1060+xQPkhViymbvFjhAE14D2K5YbjCGg==",
-      "path": "aspose.cells/19.2.0",
-      "hashPath": "aspose.cells.19.2.0.nupkg.sha512"
-    },
-    "Aspose.Slides.NET/18.12.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rQlYE4o3UEQ9j2qxTXSioovSTLGhobe4nZijw3vCbcae/P5CaDRpGf3wkuknseceARlLrEXiAfzXOXh2N6Nnsg==",
-      "path": "aspose.slides.net/18.12.0",
-      "hashPath": "aspose.slides.net.18.12.0.nupkg.sha512"
-    },
-    "Aspose.Words/19.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5HxpqWSaZYpI+3bt0gH0bdyn8npH3vrRm++IbnbmjjnJFbJ7AsVtlFL5hvsq9QLmLHpRZr8o+hRXQcSXBLoZSg==",
-      "path": "aspose.words/19.2.0",
-      "hashPath": "aspose.words.19.2.0.nupkg.sha512"
     },
     "Autofac/4.0.0": {
       "type": "package",
@@ -7440,12 +7407,12 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
-    "System.Drawing.Common/4.5.0": {
+    "System.Drawing.Common/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
-      "path": "system.drawing.common/4.5.0",
-      "hashPath": "system.drawing.common.4.5.0.nupkg.sha512"
+      "sha512": "sha512-m3c7Fe/CS/jZ/nLBrxCCh52dYiC33GPbGfcF4CiVukb8+p121XUTHxs6sYKbWfvDVD8JssHcM+HVFLtzl3X3Xw==",
+      "path": "system.drawing.common/4.5.1",
+      "hashPath": "system.drawing.common.4.5.1.nupkg.sha512"
     },
     "System.Dynamic.Runtime/4.3.0": {
       "type": "package",
@@ -8075,6 +8042,21 @@
     },
     "BusinessLibrary/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aspose.Cells/7.4.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aspose.Slides/7.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aspose.Words/13.2.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
