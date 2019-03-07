@@ -9,6 +9,7 @@ namespace BaseCore.Untity
     {
         public static IDbConnection GetInstance(String driverType, string connectionStr)
         {
+            //这样根据类型确定连接是mysql还是sqlserver
             var type = Type.GetType(driverType);
             var iconn = Activator.CreateInstance(type, connectionStr) as IDbConnection;
             if (iconn == null) { throw new Exception(" is null"); }

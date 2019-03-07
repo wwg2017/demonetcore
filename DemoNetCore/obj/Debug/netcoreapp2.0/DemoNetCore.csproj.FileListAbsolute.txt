@@ -68,6 +68,3 @@ I:\Git仓储\demonetcore\DemoNetCore\obj\Debug\netcoreapp2.0\DemoNetCore.Assembl
 I:\Git仓储\demonetcore\DemoNetCore\obj\Debug\netcoreapp2.0\DemoNetCore.csproj.CopyComplete
 I:\Git仓储\demonetcore\DemoNetCore\obj\Debug\netcoreapp2.0\DemoNetCore.dll
 I:\Git仓储\demonetcore\DemoNetCore\obj\Debug\netcoreapp2.0\DemoNetCore.pdb
-I:\Git仓储\demonetcore\DemoNetCore\bin\Debug\netcoreapp2.0\Aspose.Cells.dll
-I:\Git仓储\demonetcore\DemoNetCore\bin\Debug\netcoreapp2.0\Aspose.Slides.dll
-I:\Git仓储\demonetcore\DemoNetCore\bin\Debug\netcoreapp2.0\Aspose.Words.dll

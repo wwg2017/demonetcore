@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove=".dockerignore" />
+    <None Remove="Dockerfile" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Alexinea.Autofac.Extensions.DependencyInjection" Version="4.2.0" />
     <PackageReference Include="Aspose.Cells" Version="19.2.0" />
     <PackageReference Include="Aspose.Slides.NET" Version="18.12.0" />

@@ -60,11 +60,13 @@ namespace DemoNetCore
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
+               
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+      
             var p = Configuration.GetSection("Redis");
              var k= p.GetValue<string>("Value");
             app.UseStaticFiles();
