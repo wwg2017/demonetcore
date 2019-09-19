@@ -52,3 +52,17 @@ I:\Git仓储\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistS
 I:\Git仓储\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.csproj.CopyComplete
 I:\Git仓储\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.dll
 I:\Git仓储\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.pdb
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\AddRegistService.deps.json
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\AddRegistService.dll
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\AddRegistService.pdb
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\BaseCore.dll
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\BusinessLibrary.dll
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\BaseCore.pdb
+I:\GitCode\demonetcore\AddImportToolService\bin\Debug\netcoreapp2.0\BusinessLibrary.pdb
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.csprojAssemblyReference.cache
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.csproj.CoreCompileInputs.cache
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.AssemblyInfoInputs.cache
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.AssemblyInfo.cs
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.csproj.CopyComplete
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.dll
+I:\GitCode\demonetcore\AddImportToolService\obj\Debug\netcoreapp2.0\AddRegistService.pdb

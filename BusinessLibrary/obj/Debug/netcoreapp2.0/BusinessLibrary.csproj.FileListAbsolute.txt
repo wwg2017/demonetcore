@@ -33,3 +33,15 @@ I:\Git仓储\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary
 I:\Git仓储\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.csproj.CopyComplete
 I:\Git仓储\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.dll
 I:\Git仓储\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.pdb
+I:\GitCode\demonetcore\BusinessLibrary\bin\Debug\netcoreapp2.0\BusinessLibrary.deps.json
+I:\GitCode\demonetcore\BusinessLibrary\bin\Debug\netcoreapp2.0\BusinessLibrary.dll
+I:\GitCode\demonetcore\BusinessLibrary\bin\Debug\netcoreapp2.0\BusinessLibrary.pdb
+I:\GitCode\demonetcore\BusinessLibrary\bin\Debug\netcoreapp2.0\BaseCore.dll
+I:\GitCode\demonetcore\BusinessLibrary\bin\Debug\netcoreapp2.0\BaseCore.pdb
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.csprojAssemblyReference.cache
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.csproj.CoreCompileInputs.cache
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.AssemblyInfoInputs.cache
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.AssemblyInfo.cs
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.csproj.CopyComplete
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.dll
+I:\GitCode\demonetcore\BusinessLibrary\obj\Debug\netcoreapp2.0\BusinessLibrary.pdb

@@ -36,14 +36,92 @@ namespace BusinessLibrary
         {
             List<Student> list = new List<Student>();
 
-            for (int i = 0; i <50000; i++)
-            {
-                Student stnew = new Student();
-                stnew.Age = i.ToString();
-                stnew.Name = "张";
-                list.Add(stnew);
+            //for (int i = 0; i <50000; i++)
+            //{
+            //    Student stnew = new Student();
+            //    stnew.Age = i.ToString();
+            //    stnew.Name = "张";
+            //    list.Add(stnew);
+            //}
+            Task.Run(() => {
+                InsertCSVE(1);
+            });
+
+            Task.Run(() => {
+                InsertCSVE(3);
+            });
+            Task.Run(() => {
+                InsertCSVE(2);
+            });
+            Task.Run(() => {
+                InsertCSVE(6);
+            });
+        }
+
+
+
+        public int InsertCSVE(int k)
+        {
+            //RowColum();
+            //string sql = @" update   Student set Age=4 where id=17872123;";
+            using (MySqlConnection conn = (MySqlConnection)_p.GetConn())
+            {              
+                var sqlTransaction = conn.BeginTransaction();
+                DataTable dt = new DataTable
+                {
+                    TableName = "student"
+                };
+                dt.Columns.Add("name");
+                dt.Columns.Add("age");
+
+                for (int i = 1; i <= 5000; i++)
+                {
+                    dt.Rows.Add(new Object[] { k, k });
+                }
+                var sw = new Stopwatch();
+                sw.Start();
+                //conn.Execute(sql, null, sqlTransaction);
+                var guid = Guid.NewGuid().ToString();
+                CSVEx.ToCsv(dt, guid);
+                CSVEx.BulkLoad(conn, dt, guid);
+                sw.Stop();
+                var p = sw.ElapsedMilliseconds;
+                sqlTransaction.Commit();
+                CSVEx.DeleteUpTemp("student"+ guid);
+                return 1;
+                //return DbContext.Execute(conn, sql, model);
             }
-            InsertDapper(list);
+        }
+        public int InsertCSVEs()
+        {
+            //RowColum();
+            string sql = @" update   Student set Age=4 where id=17872123;";
+            using (MySqlConnection conn = (MySqlConnection)_p.GetConn())
+            {
+                var sqlTransaction = conn.BeginTransaction();
+                DataTable dt = new DataTable
+                {
+                    TableName = "student"
+                };
+                dt.Columns.Add("name");
+                dt.Columns.Add("age");
+
+                for (int i = 1; i <= 5000; i++)
+                {
+                    dt.Rows.Add(new Object[] { 2, 3 });
+                }
+                var sw = new Stopwatch();
+                sw.Start();
+                conn.Execute(sql, null, sqlTransaction);
+                var guid = Guid.NewGuid().ToString();
+                CSVEx.ToCsv(dt, guid);
+                CSVEx.BulkLoad(conn, dt, guid);
+                sw.Stop();
+                var p = sw.ElapsedMilliseconds;
+                sqlTransaction.Commit();
+                return 1;
+                //return DbContext.Execute(conn, sql, model);
+            }
         }
         /// <summary>
         /// 效率也差次之

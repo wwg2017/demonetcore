@@ -1,0 +1,285 @@
+﻿<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/ajaxupload.js"></script>
+<script type="text/javascript" src="https://static.nxin.com/mobile/jssdk/znt.min.js"></script>
+<div style="margin-top:50px;">
+    年龄 <input id="age" type="text" value="" name="" />
+    姓名 <input id="name" type="text" value="" name="" />
+    <input value="提交" type="button" id="sumit" />
+</div>
+
+
+
+<form>
+    <ul class="upload_files_result" id="upload_files_result">
+        <li>
+            <div class="uploadImg">
+                <span class="blue01"><i class="glyphicon glyphicon-plus-sign"></i> 继续添加</span>
+                <input class="uploadFile" type="file" id="uploadFile">
+            </div>
+        </li>
+
+    </ul>
+    <div>
+        <a href="" onclick="retunhtml()">农信集团专利奖励办法.doc</a>
+    </div>
+</form>
+<div> <a href="home/Map">点击跳到地图</a></div>
+<div style="margin-top:150px;" id="aged">
+
+
+    <figure>
+        <h3>图片验证码</h3>
+        <fieldset>
+            <legend>数字验证码</legend>
+            <img id="nubImg" title="数字验证码" src="/Home/NumberVerifyCode?random=" alt="vcode" onclick="refresh()" style="cursor:pointer;" />
+        </fieldset>
+        <fieldset>
+            <legend>数字验证码</legend>
+            <img id="abcImg" title="字母验证码" src="/Home/AbcVerifyCode" alt="vcode" onclick="this.src=this.src+'?'" style="cursor:pointer;" />
+        </fieldset>
+        <fieldset>
+            <legend>混合验证码</legend>
+            <img id="mixImg" title="数字字母混合验证码" src="/Home/MixVerifyCode" alt="vcode" onclick="this.src=this.src+'?'" style="cursor:pointer;" />
+        </fieldset>
+    </figure>
+
+</div>
+<div style=" margin-bottom:5px;">
+    <a id="btnRun" class="btn btn-default" href="#" role="button">执行</a>
+    <a id="btnPause" class="btn btn-default" href="#" role="button">暂停</a>
+    <a id="btnResume" class="btn btn-default" href="#" role="button">恢复</a>
+
+    <a id="btnEdit" class="btn btn-default" href="#" role="button" style=" margin-left:10px">修改</a>
+    <a id="btnDel" class="btn btn-default" href="#" role="button">删除</a>
+</div>
+
+
+<script>
+
+    var a = 0.1;
+    var b = 0.2;
+    var c = a + b;
+    console.log(c);
+    $("#sumit").click(function () {
+        $.post("/Home/Save", { Age: $("#age").val(), Name: $("#name").val() }, function (data) {
+            $("#aged").html(data);
+        });
+    });
+
+    function refresh() {
+        var id = document.getElementById("nubImg");
+        var str = "/VerifyCode/NumberVerifyCode?random=" + Math.random();
+        id.setAttribute("src", str);
+    }
+
+    $("#btnRun").click(function () {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Start/",
+            data: null,// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                $("#commonLayout_appcreshi").parent().html(data);
+            }
+        });
+    });
+    $("#btnPause").click(function () {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Pause/",
+            data: null,// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                $("#commonLayout_appcreshi").parent().html(data);
+            }
+        });
+    });
+
+    $("#btnResume").click(function () {
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Rest/",
+            data: null,// 你的formid
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                $("#commonLayout_appcreshi").parent().html(data);
+            }
+        });
+    });
+</script>
+<script>
+    $(function () {
+        znt.openH5Win({
+            requestUrl: "http://www.baidu.com"
+        });
+        //获取地理位置，只能在智农通的环境中打开
+        znt.getLocation({
+            success: function (res) {
+                var latitude = res.lat;
+                var longitude = res.lng;
+                var address = res.address;
+                alert(address);
+            },
+            fail: function (res) {
+                alert(res.errorCode);
+                alert(res.msg);
+            }
+        });
+    });
+</script>
+
+<script>
+    uploadfile("#uploadFile", 2, $('#upload_files_result'), 5);
+
+    loadFile($('#Guid').val(), $('#upload_files_result'), $('#upload_img_result'));
+    /*上传文件,待完善  file:标签元素id, type:上传类型 0 附件和图片，
+2 上传附件 1 上传图片, target:拼接的目标对象,maxCount:上传最大文件数,[callback]:回调处理函数*/
+    function uploadfile(element, type, target, maxCount, callback) {
+        new AjaxUpload(element, {
+            action: "/Home/UpFile?type=" + type,
+            onComplete: function (file, response) {
+                if (response) {
+                    //var data = eval("(" + response + ")");
+                    response = $.parseJSON(response);
+                    var data = $.parseJSON(response.FilePath);
+                    if (data.ret == 0) {
+                        // var id = data.filepath.split('=')[1];
+                        if (callback && typeof (eval(callback)) == 'function') {
+                            callback(data, target);
+                        } else {
+                            /*默认拼接方式*/
+                            var id = data.filepath.split('=')[1];
+                            var html = '';
+                            if (1 == type) {
+                                var extention = file.split('.')[1];
+                                extention = extention.toLowerCase();
+                                if ('jpg' == extention || 'png' == extention || 'jpeg' == extention || 'gif' == extention || 'bmp' == extention) {
+                                    html = '<li   path=\"' + data.filepath + '\"  name=\"' + response.FileName + '\" >\
+                       <img src=\"' + data.filepath + '\" alt=\"' + response.FileName + '\"/>\
+                    </li>';
+                                } else {
+                                    alert("格式不正确，请上传图片");
+                                    return;
+                                }
+                            } else {
+                                if ($(target).find('li').length <= maxCount) {
+                                    html = '<li   path=\"' + data.filepath + '\"  name=\"' + response.FileName + '\" >\
+                        <a href=\"' + data.filepath + '\" target=\"_blank\"><i class="glyphicon glyphicon-paperclip mr5 grey02"></i><strong>' + response.FileName + '</strong></a>\
+                    </li>';
+                                } else {
+                                    alert("最多上传" + (maxCount) + "个附件");
+                                }
+                            }
+                            $(html).hover(function () {
+                                if (!$(this).has('b').length) {
+                                    $(this).append('<b  onclick=\"removeEle($(this));\">&times;</b>');
+                                } else {
+                                    $(this).find('b').show();
+                                }
+                            }, function () {
+                                if ($(this).has('b').length) {
+                                    $(this).find('b').hide();
+                                }
+                            }).prependTo(target);
+
+                        }
+                    } else {
+                        alert("上传失败");
+                    }
+                }
+            }
+        });
+    }
+
+
+
+
+    /*加载文件*/
+    function loadFile(id, fileTareget, imgTarget, isGuid) {
+        if (id && id != '00000000-0000-0000-0000-000000000000') {
+            $.post('/HR/Common/LoadImg', { id: id, isGuid: isGuid }, function (data) {
+                if (data) {
+                    data = $.parseJSON(data);
+                    if (data.Files && data.Files.length > 0 && fileTareget.size() > 0) {
+
+                        $.each(data.Files, function (index, ele) {
+                            $('<li id=' + ele.FilePath + '  path=\"' + ele.FilePath + '\" name=\"' + ele.FileName + '\">\
+                                   <a href=\"' + ele.FilePath + '\" target=\"_blank\"> <i class="glyphicon glyphicon-paperclip mr5 grey02"></i><strong>' + ele.FileName + '</strong></a>\
+                                </li>').hover(function () {
+                                    if (!$(this).has('b').length) {
+                                        $(this).append('<b  onclick=\"removeEle($(this));\">&times;</b>');
+                                    } else {
+                                        $(this).find('b').show();
+                                    }
+                                }, function () {
+                                    if ($(this).has('b').length) {
+                                        $(this).find('b').hide();
+                                    }
+                                }).prependTo(fileTareget);
+                        });
+                    }
+                    if (data.Imgs && data.Imgs.length > 0 && imgTarget.size() > 0) {
+                        imgTarget.html("");
+                        $.each(data.Files, function (index, ele) {
+                            $('<li id=' + ele.FilePath + '  path=\"' + ele.FilePath + '\" name=\"' + ele.FileName + '\">\
+                                     <img src=\"' + ele.FilePath + '\" alt=\"' + ele.FileName + '\"/>\
+                                </li>').hover(function () {
+                                    if (!$(this).has('a').length) {
+                                        $(this).append('<a href="javascript:;" onclick=\"removeEle($(this));\">&times;</a>');
+                                    } else {
+                                        $(this).find('a').show();
+                                    }
+                                }, function () {
+                                    if ($(this).has('a').length) {
+                                        $(this).find('a').hide();
+                                    }
+                                }).appendTo(imgTarget);
+                        });
+                    }
+                }
+            });
+        }
+    }
+
+
+</script>
+
+<script>
+    //.net core 打开静态文件 js 图片默认必须放到wwwroot下面,,但是如果更改也可以只要子statup中改写app.UseStaticFiles(new StaticFileOptions()
+            //{
+             //   FileProvider = new PhysicalFileProvider(
+          @*//Path.Combine(Directory.GetCurrentDirectory(), @"StaticFiles")),*@
+               // RequestPath = new PathString("/StaticFiles")
+          //  });
+    function retunhtml() {      
+        $.ajax({
+            cache: true,
+            type: "POST",
+            url: "/Home/Html/",
+            //data: { path: "PrintPDF.pdf" },
+            //data: { path:"农信集团专利奖励办法.doc"},
+            //data: { path:"ppttest.pptx"},
+            //data: { path: "exceltest.xls" },
+            data: { path:"ppttest.pptx"},
+            async: false,
+            error: function (request) {
+                alert("Connection error");
+            },
+            success: function (data) {
+                window.open("http://localhost:8093/"+data);
+            }
+        });
+    }
+</script>

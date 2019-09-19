@@ -1,4 +1,5 @@
-﻿using BaseCore.Model;
+﻿using BaseCore.Log;
+using BaseCore.Model;
 using Microsoft.Extensions.Options;
 using MySql.Data.MySqlClient;
 using System;
@@ -25,6 +26,7 @@ namespace BaseCore.Untity
             {
                 case "QlwDB":
                     conn = DbConnectionFactory.GetInstance(_dbConfig.QlwDB.DbDriverType, _dbConfig.QlwDB.ConnectionString);
+                   
                     break;
             }
             conn.Open();

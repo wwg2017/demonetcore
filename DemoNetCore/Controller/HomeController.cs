@@ -46,17 +46,9 @@ namespace BusinessLibrary
         }   
         [MyFilter]
         public IActionResult Index()
-         {
-           
-            
+         {                       
             //var pk = 0;
-            //var j = 8 / pk;
-
-            Image();
-
-
-
-
+            //var j = 8 / pk;           
             List<Demo> list = new List<Demo>();
             Demo de = new Demo();
 
@@ -89,10 +81,10 @@ namespace BusinessLibrary
             klist.Add(1); klist.Add(2);
             List<int> klists = new List<int>();
             var kp = klist.Where(p => p == 1 || p == 2).ToList().Count();
-            //RedisHelper redis = new RedisHelper(1);
-            //#region String
-            //string str = "wwg123";
-            //redis.StringSet("strKey", str);
+            RedisHelper redis = new RedisHelper(12);
+         
+            string str = "wwg123";
+            redis.StringSet("strKey", str);
             //var strget = redis.StringGet("strKey");
             //Demo demo = new Demo()
             //{
